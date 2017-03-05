@@ -3,7 +3,7 @@
 
 using namespace GameTest;
 
-template < typename func, typename container, typename... vargs > bln TProc( func f, container &&ls, vargs &&... args )
+template < typename func, typename container, typename... vargs > bool TProc( func f, container &&ls, vargs &&... args )
 {
 	for( uiw index = ls.size() - 1; index != uiw_max; --index )
 	{
@@ -15,37 +15,37 @@ template < typename func, typename container, typename... vargs > bln TProc( fun
 	return false;
 }
 
-bln ControllablesStack::KeyDown( VKeys::vkey_t key, const AdditionalInfo &info )
+bool ControllablesStack::KeyDown( VKeys::vkey_t key, const AdditionalInfo &info )
 {
 	return TProc( &ControllableInterface::KeyDown, _listenersStack, key, info );
 }
 
-bln ControllablesStack::KeyUp( VKeys::vkey_t key, const AdditionalInfo &info )
+bool ControllablesStack::KeyUp( VKeys::vkey_t key, const AdditionalInfo &info )
 {
 	return TProc( &ControllableInterface::KeyUp, _listenersStack, key, info );
 }
 
-bln ControllablesStack::MouseMove( f32 x, f32 y, const AdditionalInfo &info )
+bool ControllablesStack::MouseMove( f32 x, f32 y, const AdditionalInfo &info )
 {
 	return TProc( &ControllableInterface::MouseMove, _listenersStack, x, y, info );
 }
 
-bln ControllablesStack::MouseScroll( f32 delta, const AdditionalInfo &info )
+bool ControllablesStack::MouseScroll( f32 delta, const AdditionalInfo &info )
 {
 	return TProc( &ControllableInterface::MouseScroll, _listenersStack, delta, info );
 }
 
-bln ControllablesStack::TouchpadDown( ui32 &index, const AdditionalInfo &info )
+bool ControllablesStack::TouchpadDown( ui32 &index, const AdditionalInfo &info )
 {
 	return TProc( &ControllableInterface::TouchpadDown, _listenersStack, index, info );  //  TODO: index handling
 }
 
-bln ControllablesStack::TouchpadMove( ui32 index, f32 x, f32 y, const AdditionalInfo &info )
+bool ControllablesStack::TouchpadMove( ui32 index, f32 x, f32 y, const AdditionalInfo &info )
 {
 	return TProc( &ControllableInterface::TouchpadMove, _listenersStack, index, x, y, info );  //  TODO: index handling
 }
 
-bln ControllablesStack::TouchpadUp( ui32 index, const AdditionalInfo &info )
+bool ControllablesStack::TouchpadUp( ui32 index, const AdditionalInfo &info )
 {
 	return TProc( &ControllableInterface::TouchpadUp, _listenersStack, index, info );  //  TODO: index handling
 }

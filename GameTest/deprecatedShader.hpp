@@ -87,7 +87,7 @@ namespace GameTest
 			return nullptr;
 		}
 		
-		bln UniformSet( const ShaderUniform &uniform )
+		bool UniformSet( const ShaderUniform &uniform )
 		{
 			auto it = std::find_if( _uniforms.begin(), _uniforms.end(), [&uniform]( const UniformsPair &up ) { return up.defaultUniform->Name() == uniform.Name(); } );
 			if( it != _uniforms.end() )
@@ -279,7 +279,7 @@ namespace GameTest
 
 	struct ShaderUniformBoolean final : public ShaderUniform
 	{
-		bln value { false };
+		bool value { false };
 
 		virtual Type UnderlyingType() const override
 		{

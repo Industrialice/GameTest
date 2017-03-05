@@ -56,7 +56,7 @@ void GameTest::RemoveWorldManager( const std::shared_ptr < class WorldManager > 
 	GTWorldManagers.erase( it );
 }
 
-bln GameTest::ValidateDisplayInfos( const CRefVec < const DisplayInfo > &displays )
+bool GameTest::ValidateDisplayInfos( const CRefVec < const DisplayInfo > &displays )
 {
 	return true;  //  TODO:
 }
@@ -101,7 +101,7 @@ void GameTest::Private::DeallocateWindow( GameWindow &window )
 	Windows.erase( it );
 }
 
-bln GameTest::Private::Main( const CRefVec < const CLogger::DirectionFunc > &loggerDirections )
+bool GameTest::Private::Main( const CRefVec < const CLogger::DirectionFunc > &loggerDirections )
 {
 	DefaultLogger = CLogger::Create( "default_logger", true, true );
 	for( CLogger::DirectionFunc dir : loggerDirections )

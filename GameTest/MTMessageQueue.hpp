@@ -15,7 +15,7 @@ namespace GameTest
 		std::mutex _mutex;
 		std::condition_variable _newWorkNotifier;
 		std::condition_variable _becameEmptyNotifier;
-		bln _is_stopWorkWaiters = false;
+		bool _is_stopWorkWaiters = false;
 
 	public:
 
@@ -72,7 +72,7 @@ namespace GameTest
 			}
 		}
 
-		bln ExecNoWait()  //  returns true if something had been exectuted
+		bool ExecNoWait()  //  returns true if something had been exectuted
 		{
 			_mutex.lock();
 			if( _messages.size() )

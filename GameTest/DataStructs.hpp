@@ -48,8 +48,8 @@ namespace GameTest
 		friend class Renderer;
 
 		mutable void *_rendererData = nullptr;
-		mutable bln _is_updatedByFrontEnd = true;
-		mutable bln _is_childrenUpdatedByFrontEnd = false;
+		mutable bool _is_updatedByFrontEnd = true;
+		mutable bool _is_childrenUpdatedByFrontEnd = false;
 
 	protected:
 		void DestroyRendererBackendData( class Renderer &currentRenderer ) const;

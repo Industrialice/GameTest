@@ -13,12 +13,12 @@ namespace GameTest::Components
 			return typeid(Collider);
 		}
 
-		static bln IsTypeExclusive()
+		static bool IsTypeExclusive()
 		{
 			return true;
 		}
 
-		virtual bln IsExclusive() const override
+		virtual bool IsExclusive() const override
 		{
 			return IsTypeExclusive();
 		}

@@ -21,13 +21,13 @@ namespace GameTest
 		virtual ~ControllableInterface() {}
 
 		//  returned true means that the input message was devoured
-		virtual bln KeyDown( VKeys::vkey_t key, const AdditionalInfo &info ) = 0;
-		virtual bln KeyUp( VKeys::vkey_t key, const AdditionalInfo &info ) = 0;
-		virtual bln MouseMove( f32 x, f32 y, const AdditionalInfo &info ) = 0;  //  relative
-		virtual bln MouseScroll( f32 delta, const AdditionalInfo &info ) = 0;
-		virtual bln TouchpadDown( ui32 &index, const AdditionalInfo &info ) = 0;
-		virtual bln TouchpadMove( ui32 index, f32 x, f32 y, const AdditionalInfo &info ) = 0;  //  relative
-		virtual bln TouchpadUp( ui32 index, const AdditionalInfo &info ) = 0;
+		virtual bool KeyDown( VKeys::vkey_t key, const AdditionalInfo &info ) = 0;
+		virtual bool KeyUp( VKeys::vkey_t key, const AdditionalInfo &info ) = 0;
+		virtual bool MouseMove( f32 x, f32 y, const AdditionalInfo &info ) = 0;  //  relative
+		virtual bool MouseScroll( f32 delta, const AdditionalInfo &info ) = 0;
+		virtual bool TouchpadDown( ui32 &index, const AdditionalInfo &info ) = 0;
+		virtual bool TouchpadMove( ui32 index, f32 x, f32 y, const AdditionalInfo &info ) = 0;  //  relative
+		virtual bool TouchpadUp( ui32 index, const AdditionalInfo &info ) = 0;
 	};
 }
 

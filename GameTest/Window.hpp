@@ -17,7 +17,7 @@ namespace GameTest
 	{
 		i32 width = 0, height = 0;
 		i32 x = 0, y = 0;
-		bln is_fullscreen = false;
+		bool is_fullscreen = false;
 		string title;
 		vector < DisplayInfo > targetDisplays;  //  can be empty if unknown
 	#ifdef WINDOWS
@@ -93,7 +93,7 @@ namespace GameTest
 			return _parameters.y;
 		}
 
-		bln IsFullscreen() const
+		bool IsFullscreen() const
 		{
 			return _parameters.is_fullscreen;
 		}

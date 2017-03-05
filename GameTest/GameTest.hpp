@@ -14,7 +14,7 @@ namespace GameTest
 	CRefVec < std::shared_ptr < class WorldManager > > WorldManagers();
 	void RemoveWorldManager( const std::shared_ptr < class WorldManager > &manager );
 
-	bln ValidateDisplayInfos( const CRefVec < const DisplayInfo > &displays );  //  will return true if displays is empty
+	bool ValidateDisplayInfos( const CRefVec < const DisplayInfo > &displays );  //  will return true if displays is empty
 	CLogger &GetDefaultLogger();
 	class ControllablesStack &GetGlobalControlsHandler();
 #ifdef WINDOWS
@@ -49,7 +49,7 @@ namespace GameTest
 	{
 		void AllocateWindow( class GameWindow &window );
 		void DeallocateWindow( class GameWindow &window );
-		bln Main( const CRefVec < const CLogger::DirectionFunc > &loggerDirections );
+		bool Main( const CRefVec < const CLogger::DirectionFunc > &loggerDirections );
 		void Shutdown();
 	}
 

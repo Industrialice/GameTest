@@ -16,8 +16,8 @@ namespace GameTest
 		vec3 _rotation = vec3( 0, 0, 0 );
 		vec3 _scale = vec3( 1, 1, 1 );
 		WorldObject *_parent = nullptr;
-		bln _is_enabled = true;
-		bln _is_static = false;  //  if the object is static, you can't change any of its properties during the gameplay, changing is available only during edit time
+		bool _is_enabled = true;
+		bool _is_static = false;  //  if the object is static, you can't change any of its properties during the gameplay, changing is available only during edit time
 		WorldManager *_worldManager = nullptr;
 		CVec < std::unique_ptr < Components::Component >, void > _components;
 		string _objectName = "WorldObject";
@@ -79,7 +79,7 @@ namespace GameTest
 			return (ComponentType *)_components.Back().get();
 		}
 
-		bln ComponentRemove( const Components::Component *component )
+		bool ComponentRemove( const Components::Component *component )
 		{
 			auto it = std::find_if( _components.begin(), _components.end(), [component]( const auto &stored ) { return stored.get() == component; } );
 			if( it == _components.end() )
@@ -104,7 +104,7 @@ namespace GameTest
 			_components.ToCRef();
 		}
 
-		template < typename ComponentType, typename Target > uiw ComponentsOfTypeGet( Target &appendTo, bln is_includeDisabled = false )
+		template < typename ComponentType, typename Target > uiw ComponentsOfTypeGet( Target &appendTo, bool is_includeDisabled = false )
 		{
 			using ClearComponentType = std::remove_cv<std::remove_pointer<std::remove_reference<ComponentType>::type>::type>::type;
 
@@ -126,7 +126,7 @@ namespace GameTest
 			return appended;
 		}
 
-		template < typename ComponentType, typename Target > uiw ComponentsOfTypeGet( Target &appendTo, bln is_includeDisabled = false ) const
+		template < typename ComponentType, typename Target > uiw ComponentsOfTypeGet( Target &appendTo, bool is_includeDisabled = false ) const
 		{
 			using ClearComponentType = std::remove_cv<std::remove_pointer<std::remove_reference<ComponentType>::type>::type>::type;
 
@@ -163,28 +163,28 @@ namespace GameTest
 			return _parent;
 		}
 
-		bln IsStatic() const
+		bool IsStatic() const
 		{
 			return _is_static;
 		}
 
-		void IsStatic( bln is_static )
+		void IsStatic( bool is_static )
 		{
 			_is_static = is_static;
 		}
 
-		bln IsEnabledSelf() const
+		bool IsEnabledSelf() const
 		{
 			return _is_enabled;
 		}
 
-		void IsEnabledSelf( bln is_enabled )
+		void IsEnabledSelf( bool is_enabled )
 		{
 			RendererBackendDataMayBeDirty();
 			_is_enabled = is_enabled;
 		}
 
-		bln IsEnabledInHierarchy() const
+		bool IsEnabledInHierarchy() const
 		{
 			return _is_enabled && (_parent == nullptr || _parent->IsEnabledInHierarchy());
 		}

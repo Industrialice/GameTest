@@ -14,12 +14,12 @@ void GameTest::Renderer::SetRendererBackendData( class RendererBackendData &obje
 	object._rendererData = data;
 }
 
-bln GameTest::Renderer::GetRendererBackendState( class RendererBackendData &object )
+bool GameTest::Renderer::GetRendererBackendState( class RendererBackendData &object )
 {
 	return object._is_updatedByFrontEnd;
 }
 
-void GameTest::Renderer::SetRendererBackendState( class RendererBackendData &object, bln is_changed )
+void GameTest::Renderer::SetRendererBackendState( class RendererBackendData &object, bool is_changed )
 {
 	object._is_updatedByFrontEnd = is_changed;
 }

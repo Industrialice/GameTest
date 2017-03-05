@@ -212,12 +212,15 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 *.tlog
-/Debug_x86
+/Debug_Win32
+/Debug_x64
 *.ipdb
 *.iobj
-/Release_x86
+/Release_Win32
+/Release_x64
 /exts.txt
 /GameTest.VC.VC.opendb
 /ParticleTestModule/ParticleTestModule.VC.VC.opendb
 /GameTest.VC.db
 /ParticleTestModule/ParticleTestModule.VC.db
+*.idb

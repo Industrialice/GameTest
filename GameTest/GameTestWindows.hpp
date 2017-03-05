@@ -7,10 +7,10 @@ namespace GameTest
 {
 	extern HINSTANCE AppHinstance;
 
-	bln CreateSystemWindow( GameWindow &window, gameTestError *error = 0 );
-	bln SetWindowTitle( GameWindow &window, const char *title, gameTestError *error = 0 );
-	bln UpdateWindowState( GameWindow &window, i32 x, i32 y, ui32 width, ui32 height, gameTestError *error = 0 );
-	bln SetWindowStyle( GameWindow &window, DWORD style, gameTestError *error = 0 );
+	bool CreateSystemWindow( GameWindow &window, gameTestError *error = 0 );
+	bool SetWindowTitle( GameWindow &window, const char *title, gameTestError *error = 0 );
+	bool UpdateWindowState( GameWindow &window, i32 x, i32 y, ui32 width, ui32 height, gameTestError *error = 0 );
+	bool SetWindowStyle( GameWindow &window, DWORD style, gameTestError *error = 0 );
 	string SystemErrorToString( DWORD error );
 }
 

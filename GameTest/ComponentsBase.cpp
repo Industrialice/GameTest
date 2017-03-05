@@ -4,22 +4,22 @@
 
 using namespace GameTest::Components;
 
-void Component::IsEnabled( bln is_enabled )
+void Component::IsEnabled( bool is_enabled )
 {
 	_is_enabled = is_enabled;
 }
 
-bln Component::IsEnabled() const
+bool Component::IsEnabled() const
 {
 	return _is_enabled;
 }
 
-bln Component::IsExclusive() const
+bool Component::IsExclusive() const
 {
 	return IsTypeExclusive();
 }
 
-bln Component::IsTypeExclusive()
+bool Component::IsTypeExclusive()
 {
 	return false;
 }

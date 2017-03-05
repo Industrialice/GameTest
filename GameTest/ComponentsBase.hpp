@@ -7,14 +7,14 @@ namespace GameTest::Components
 {
 	class Component
 	{
-		bln _is_enabled = true;
+		bool _is_enabled = true;
 
 	public:
-		virtual void IsEnabled( bln is_enabled );
-		bln IsEnabled() const;
+		virtual void IsEnabled( bool is_enabled );
+		bool IsEnabled() const;
 		virtual std::type_index TypeID() const = 0;
-		static bln IsTypeExclusive();
-		virtual bln IsExclusive() const;  //  you can add only one exclusive component to a world object
+		static bool IsTypeExclusive();
+		virtual bool IsExclusive() const;  //  you can add only one exclusive component to a world object
 	};
 }
 

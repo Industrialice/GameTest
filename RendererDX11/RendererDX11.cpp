@@ -19,14 +19,14 @@ class RendererDX11Impl final : public RendererDX11
 	COMSharedPtr < ID3D11DeviceContext > _immContext;
 	D3D_FEATURE_LEVEL _featureLevel, _maxSupportedFeatureLevel;
 	MTMessageQueue _globalMessageQueue;
-	bln _is_begunFrame = false;
+	bool _is_begunFrame = false;
 	std::thread _rendererMainThread;
 	std::atomic_bool _is_countinueMainThreadPolling;
 	std::mutex _endFrameMutex;
 	std::condition_variable _endFrameCV;
 	std::atomic_bool _is_frameEnded;
 	vector < COMSharedPtr < IDXGISwapChain > > _swapChainsToPresent;
-	bln _is_waitingForWindowResizeNotification = false;
+	bool _is_waitingForWindowResizeNotification = false;
 	vector < void * > _objectsToRender;
 
 	struct RendererBackendDataTypeSpecifier
@@ -38,7 +38,7 @@ class RendererDX11Impl final : public RendererDX11
 	{
 		HWND hwnd = NULL;
 		ui32 width = 0, height = 0;
-		bln is_fullscreen = false;
+		bool is_fullscreen = false;
 		COMSharedPtr < IDXGISwapChain > swapChain;
 		COMSharedPtr < ID3D11RenderTargetView > RTV;
 		ui32 rtvWidth = 0, rtvHeight = 0;
@@ -216,7 +216,7 @@ public:
 		}
 	}
 	
-	bln MakeWindowAssociation( GameWindow *window )
+	bool MakeWindowAssociation( GameWindow *window )
 	{
 		if( Renderer::GetRendererBackendData( *window ) == nullptr )
 		{
@@ -434,17 +434,17 @@ public:
 		//  TODO:
 	}
 	
-	virtual bln GenerateTextureMipChain( class Texture *texture ) override
+	virtual bool GenerateTextureMipChain( class Texture *texture ) override
 	{
 		return false;  //  TODO:
 	}
 	
-	virtual bln SetTextureTopMipData( class Texture *texture, const void *data, ui32 stride, TextureFmt format ) override
+	virtual bool SetTextureTopMipData( class Texture *texture, const void *data, ui32 stride, TextureFmt format ) override
 	{
 		return false;  //  TODO:
 	}
 		
-	virtual bln BeginFrame() override
+	virtual bool BeginFrame() override
 	{
 		if( _is_begunFrame )
 		{
@@ -466,7 +466,7 @@ public:
 		return true;
 	}
 	
-	virtual bln EndFrame() override
+	virtual bool EndFrame() override
 	{
 		if( !_is_begunFrame )
 		{
@@ -499,7 +499,7 @@ public:
 		return true;
 	}
 
-	bln UpdateWindow( GameWindow *window )  //  handles changes to windows
+	bool UpdateWindow( GameWindow *window )  //  handles changes to windows
 	{
 		ASSUME( window );
 		PrivateWindowData *pwd = (PrivateWindowData *)Renderer::GetRendererBackendData( *window );

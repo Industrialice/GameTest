@@ -15,16 +15,16 @@ namespace GameTest
 	{
 		enum class Importance { vlow, low, norm, high, vhigh };
 
-		Nullable < bln > is_allowSizeOptimization;
-		Nullable < bln > is_allowFormatOptimization;
-		Nullable < bln > is_allowMipGeneration;
-		Nullable < bln > is_allowCPURead;
-		Nullable < bln > is_allowCPUWrite;
-		Nullable < bln > is_allowGPUUnorderedRead;
-		Nullable < bln > is_allowGPUUnorderedWrite;
-		Nullable < bln > is_allowGPURenderTarget;
-		bln is_allowGPUShaderResource = true;
-		Nullable < bln > is_makeDynamic;  //  will be often written by the CPU, only valid when is_allowCPUWrite is true
+		Nullable < bool > is_allowSizeOptimization;
+		Nullable < bool > is_allowFormatOptimization;
+		Nullable < bool > is_allowMipGeneration;
+		Nullable < bool > is_allowCPURead;
+		Nullable < bool > is_allowCPUWrite;
+		Nullable < bool > is_allowGPUUnorderedRead;
+		Nullable < bool > is_allowGPUUnorderedWrite;
+		Nullable < bool > is_allowGPURenderTarget;
+		bool is_allowGPUShaderResource = true;
+		Nullable < bool > is_makeDynamic;  //  will be often written by the CPU, only valid when is_allowCPUWrite is true
 		Importance importance = Importance::norm;  //  renderer can use this flag to decide if it should, for example, decrease resolution or unload mip levels if there's not enough memory
 	};
 
@@ -118,7 +118,7 @@ namespace GameTest
 			return _renderer->UnlockTextureMips( this );
 		}
 
-		bln GenerateMipChain()
+		bool GenerateMipChain()
 		{
 			if( _renderer == nullptr )
 			{
@@ -128,7 +128,7 @@ namespace GameTest
 			return _renderer->GenerateTextureMipChain( this );
 		}
 
-		bln SetTopMipData( const void *data, ui32 stride, TextureFmt format )
+		bool SetTopMipData( const void *data, ui32 stride, TextureFmt format )
 		{
 			if( _renderer == nullptr )
 			{

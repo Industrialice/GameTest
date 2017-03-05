@@ -19,8 +19,8 @@ namespace GameTest
 	protected:
 		void *GetRendererBackendData( class RendererBackendData &object );
 		void SetRendererBackendData( class RendererBackendData &object, void *data );
-		bln GetRendererBackendState( class RendererBackendData &object );
-		void SetRendererBackendState( class RendererBackendData &object, bln is_changed );
+		bool GetRendererBackendState( class RendererBackendData &object );
+		void SetRendererBackendState( class RendererBackendData &object, bool is_changed );
 		virtual void FreeRendererBackendData( void *data ) = 0;
 
 	public:
@@ -38,11 +38,11 @@ namespace GameTest
 		virtual const struct TextureInfo &LoadedTexInfo( const class Texture *texture ) = 0;
 		virtual struct LockedTextureMemory LockTextureMips( class Texture *texture, ui32 firstMipToLock, ui32 lastMipToLock ) = 0;
 		virtual void UnlockTextureMips( class Texture *texture ) = 0;
-		virtual bln GenerateTextureMipChain( class Texture *texture ) = 0;
-		virtual bln SetTextureTopMipData( class Texture *texture, const void *data, ui32 stride, TextureFmt format ) = 0;
+		virtual bool GenerateTextureMipChain( class Texture *texture ) = 0;
+		virtual bool SetTextureTopMipData( class Texture *texture, const void *data, ui32 stride, TextureFmt format ) = 0;
 
-		virtual bln BeginFrame() = 0;
-		virtual bln EndFrame() = 0;  //  will present the final frame to the target windows
+		virtual bool BeginFrame() = 0;
+		virtual bool EndFrame() = 0;  //  will present the final frame to the target windows
 		virtual void RenderScene( CRefVec < std::shared_ptr < class WorldManager > > worldManagers, const class Components::Camera &camera ) = 0;
 
 		void FreeBackendData( WorldObject &object );

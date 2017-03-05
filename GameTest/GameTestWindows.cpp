@@ -16,11 +16,11 @@ namespace GameTest
 	HINSTANCE AppHinstance;
 }
 
-static bln RegisterInputDevices();
+static bool RegisterInputDevices();
 static void VSOutputLogFunc( CLogger::Tag tag, const char *text, uiw len );
 static void CriticalOutputLogFunc( CLogger::Tag tag, const char *text, uiw len );
 static LRESULT WINAPI MsgProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam );
-static bln PerformTest();
+static bool PerformTest();
 
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int )
 {
@@ -58,7 +58,7 @@ void Lambda( i32 a, f32 b )
 	OutputDebugStringA( buf );
 }
 
-bln PerformTest()
+bool PerformTest()
 {
 	using namespace GameTest;
 
@@ -168,7 +168,7 @@ bln PerformTest()
 	return true;
 }
 
-bln GameTest::CreateSystemWindow( GameWindow &window, gameTestError *error )
+bool GameTest::CreateSystemWindow( GameWindow &window, gameTestError *error )
 {
 	auto parameters = window.Parameters();
 
@@ -223,19 +223,19 @@ bln GameTest::CreateSystemWindow( GameWindow &window, gameTestError *error )
 	return true;
 }
 
-bln GameTest::SetWindowTitle( GameWindow &window, const char *title, gameTestError *error )
+bool GameTest::SetWindowTitle( GameWindow &window, const char *title, gameTestError *error )
 {
 	DSA( error, Error::Unimplemented() );
 	return false;
 }
 
-bln GameTest::UpdateWindowState( GameWindow &window, i32 x, i32 y, ui32 width, ui32 height, gameTestError *error )
+bool GameTest::UpdateWindowState( GameWindow &window, i32 x, i32 y, ui32 width, ui32 height, gameTestError *error )
 {
 	DSA( error, Error::Unimplemented() );
 	return false;
 }
 	
-bln GameTest::SetWindowStyle( GameWindow &window, DWORD style, gameTestError *error )
+bool GameTest::SetWindowStyle( GameWindow &window, DWORD style, gameTestError *error )
 {
 	DSA( error, Error::Unimplemented() );
 	return false;
@@ -261,7 +261,7 @@ string GameTest::SystemErrorToString( DWORD error )
 	return string( messageBuffer.get(), size );
 }
 
-bln RegisterInputDevices()
+bool RegisterInputDevices()
 {
     RAWINPUTDEVICE hids[ 2 ];
 
