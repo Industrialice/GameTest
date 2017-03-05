@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Core Sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Components Headers">
+      <UniqueIdentifier>{6574cfa2-483e-41fe-9d46-4d4ea56ce808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components Sources">
+      <UniqueIdentifier>{e88fbe83-9b69-4cf7-8590-0a9e01e54275}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Texture.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcePath.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PreHeader.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructs.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTestWindows.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTest.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllableInterface.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllablesStack.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MTMessageQueue.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTarget.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentRigidBody.hpp">
+      <Filter>Components Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentsBase.hpp">
+      <Filter>Components Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentMeshRenderer.hpp">
+      <Filter>Components Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentAudioSource.hpp">
+      <Filter>Components Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentCollider.hpp">
+      <Filter>Components Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentLightSource.h">
+      <Filter>Components Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentCamera.hpp">
+      <Filter>Components Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObject.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldManager.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="COMSharedPtr.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="deprecatedShader.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.hpp">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PreHeader.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTestWindows.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTest.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllablesStack.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentsBase.cpp">
+      <Filter>Components Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldManager.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructs.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Core Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
